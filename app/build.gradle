@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.oqupie.portalfinderexample"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation project(':oqupiesupportsdk')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    androidTestImplementation 'androidx.annotation:annotation:1.0.0';
+    androidTestImplementation 'androidx.test:runner:1.1.0';
+    androidTestImplementation 'androidx.test:rules:1.1.0';
+    androidTestImplementation('androidx.test.espresso:espresso-intents:3.1.0')
+    androidTestImplementation 'androidx.test.espresso:espresso-web:3.1.0';
+
+    testImplementation 'junit:junit:4.12'
+}
