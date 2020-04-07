@@ -42,6 +42,7 @@ hs_err_pid*
 *.aar
 *.ap_
 *.aab
+!oqupiesupportsdk-*.aar
 
 # Files for the ART/Dalvik VM
 *.dex
